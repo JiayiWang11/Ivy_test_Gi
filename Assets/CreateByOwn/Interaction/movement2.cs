@@ -9,7 +9,7 @@ public class movement2 : MonoBehaviour
     public float runSpeed = 10f;
     public float raycastDistance = 0.5f;
     public LayerMask collisionLayers;
-    private float upperBodyHeight = 0.7f;
+    private float upperBodyHeight = 0.6f;
     Animator animator;
     Rigidbody rb;
 
@@ -39,17 +39,9 @@ public class movement2 : MonoBehaviour
         // 检查玩家是否按下加速键（例如左Shift键）
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         animator.SetBool("Run", isRunning);
-        // 检查玩家是否按下空格键
-        bool isJumping = Input.GetKeyDown(KeyCode.Space);
-        // 检查是否在地面上并跳跃
-        if(isGrounded && isJumping)
-        {
-            
-            animator.SetTrigger("Jump");
-            rb.AddForce(Vector3.up * Mathf.Sqrt(1 * 1f * Physics.gravity.magnitude), ForceMode.VelocityChange);
-        }
+
         // 检查是否按下 C 键来控制蹲下动作
-        bool isCrouching = Input.GetKey(KeyCode.C);
+        bool isCrouching = Input.GetKey(KeyCode.Space);
         animator.SetBool("Crouch", isCrouching);
         
 

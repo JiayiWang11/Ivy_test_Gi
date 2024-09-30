@@ -19,7 +19,7 @@ public class PlayerPack : MonoBehaviour
     void Update()
     {
         // 检查是否按下 Z 键打开/关闭背包 UI
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             TogglePackUI();
         }
