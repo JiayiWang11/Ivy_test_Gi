@@ -7,12 +7,15 @@ public class PlayerPack : MonoBehaviour
     public GameObject packUI; // 背包 UI 面板
     public int capacity = 6; // 背包容量
     public List<string> items; // 用来存储物品的列表
+    public List<string> weaponsList;
     public List<GameObject> slots; // 背包的格子（Slot）列表，每个格子应该包含一个 Image 组件
     public Dictionary<string, Sprite> itemSprites; // 用来存储物品名称与图片的映射
 
     void Start()
     {
         items = new List<string>(capacity); // 初始化背包
+        weaponsList = new List<string>();
+        weaponsList.Add("fist");
         packUI.SetActive(false); // 初始化时隐藏 UI
         itemSprites = new Dictionary<string, Sprite>();
     }
@@ -26,10 +29,14 @@ public class PlayerPack : MonoBehaviour
     }
 
     // 添加物品到背包
-    public bool AddItem(string item)
+    public bool AddItem(string item, bool isWeapon)
     {
         if (items.Count < capacity)
         {
+            if (isWeapon)
+            {
+                weaponsList.Add(item);
+            }
             items.Add(item);
             Debug.Log("Added " + item + " to pack.");
             itemSprites[item] = Resources.Load<Sprite>("Item Images/" + item);

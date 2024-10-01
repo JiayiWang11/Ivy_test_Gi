@@ -76,9 +76,5 @@ public class MagicAttack : MonoBehaviour
             // 2秒后销毁粒子系统
             Destroy(bloodEffect, 2.0f);
         }
-        else
-        {
-            Debug.LogError("Blood effect prefab or player head reference is missing!");
-        }
     }
 }

@@ -124,10 +124,6 @@ public class AutoAttack : MonoBehaviour
             GameObject bloodEffect = Instantiate(bloodEffectPrefab, hitPointPosition, Quaternion.identity);
             Destroy(bloodEffect, 2.0f); // 在2秒后销毁效果
         }
-        else
-        {
-            Debug.LogError("Blood effect prefab or player spine reference is missing!");
-        }
     }
 
     // 斧头的触发器检测玩家是否被攻击到

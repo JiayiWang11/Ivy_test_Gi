@@ -26,8 +26,8 @@ public class EnemyFire : MonoBehaviour
         DetectPlayerInView();
 
         float distance = Vector3.Distance(transform.position, player.position);
-        
-        if (isPlayerInSight && distance <= attackDistance)
+        bool playerIsDead = player.GetComponent<HealthManager>().currentHealth <= 0;
+        if (isPlayerInSight && distance <= attackDistance && !playerIsDead)
         {
             animator.SetBool("IsAttack", true);
             if (Time.time >= nextFireTime)
