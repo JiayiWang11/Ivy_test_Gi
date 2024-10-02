@@ -19,9 +19,6 @@ public class HandBattle : MonoBehaviour
     void Attack()
 
     {
-        Debug.Log("beat");
-
-        Debug.Log("Current Animator Controller: " + animator.runtimeAnimatorController.name);
         if (currentWeapon == "fist") {
             animator.SetBool("hit1", true);
         }

@@ -26,14 +26,14 @@ public class FixedObjectInteraction : MonoBehaviour
         {
             dc = other.GetComponent<doorController>();
             openDoorBtn.GetComponent<Image>().sprite = OpenDoorSprite;
-            if (dc.isOpen)
-            {
-                openDoorBtn.GetComponentInChildren<Text>().text = "Press Q";
-            }
-            else
-            {
-                openDoorBtn.GetComponentInChildren<Text>().text = "Press Q";
-            }
+            // if (dc.isOpen)
+            // {
+            //     // openDoorBtn.GetComponentInChildren<Text>().text = "Press Q";
+            // }
+            // else
+            // {
+            //     // openDoorBtn.GetComponentInChildren<Text>().text = "Press Q";
+            // }
             openDoorBtn.gameObject.SetActive(true);
         }
         else if (other.CompareTag("Drawer"))

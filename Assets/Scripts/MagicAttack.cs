@@ -39,7 +39,7 @@ public class MagicAttack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // 对玩家造成伤害
-            HealthManager playerHealth = other.GetComponent<HealthManager>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);

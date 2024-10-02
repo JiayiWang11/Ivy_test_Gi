@@ -104,7 +104,7 @@ public class AutoAttack : MonoBehaviour
         if (npcType == NPCType.HandAttack)
         {
             // 如果是手攻击，直接对玩家造成伤害
-            HealthManager playerHealth = player.GetComponent<HealthManager>();
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(handDamage); // 直接扣血
@@ -132,7 +132,7 @@ public class AutoAttack : MonoBehaviour
         if (npcType == NPCType.AxeAttack && other.CompareTag("Player"))
         {
             // 只有斧头攻击使用碰撞检测
-            HealthManager playerHealth = other.GetComponent<HealthManager>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(axeDamage); // 对玩家造成斧头伤害

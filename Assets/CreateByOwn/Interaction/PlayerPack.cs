@@ -21,7 +21,7 @@ public class PlayerPack : MonoBehaviour
     }
     void Update()
     {
-        // 检查是否按下 Z 键打开/关闭背包 UI
+        // 检查是否按下 Tab 键打开/关闭背包 UI
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             TogglePackUI();
@@ -31,7 +31,8 @@ public class PlayerPack : MonoBehaviour
     // 添加物品到背包
     public bool AddItem(string item, bool isWeapon)
     {
-        if (items.Count < capacity)
+        bool isAdded = items.Contains(item);
+        if (items.Count < capacity && !isAdded)
         {
             if (isWeapon)
             {

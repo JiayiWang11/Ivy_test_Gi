@@ -14,12 +14,12 @@ public class FireSpread : MonoBehaviour
     private float damageTimer = 0f;        // 计时器
     private int index = 0;
     private bool isSpreading = false;      // 判断火焰是否正在扩散
-    private HealthManager playerHealth;    // 引用玩家的HealthManager脚本
+    private PlayerHealth playerHealth;    // 引用玩家的HealthManager脚本
 
     private void Start()
     {
         // 获取玩家身上的 HealthManager 脚本
-        playerHealth = player.GetComponent<HealthManager>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth == null)
         {
             Debug.LogError("玩家缺少 HealthManager 组件！");

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealthManager : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 200;
     public int currentHealth;

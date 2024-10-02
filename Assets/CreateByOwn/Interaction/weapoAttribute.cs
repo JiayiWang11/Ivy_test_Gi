@@ -5,15 +5,6 @@ using UnityEngine;
 public class weaponAttribute : MonoBehaviour
 {
     public int damage = 20;  // 武器攻击的伤害
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float attackDistance = 1f;  // 武器的攻击距离
+    public float cooldownTime = 1f;  // 武器的冷却时间
 }

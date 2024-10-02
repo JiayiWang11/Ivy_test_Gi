@@ -21,7 +21,7 @@ public class SimplePatrol : MonoBehaviour
     }
     void CreateFX_GC_L()
     {
-        Debug.Log("Left Footstep Event Triggered");
+        // Debug.Log("Left Footstep Event Triggered");
         Transform leftFoot = animator.GetBoneTransform(HumanBodyBones.LeftFoot);
         Vector3 footPosition = leftFoot.position;
 
@@ -40,7 +40,7 @@ public class SimplePatrol : MonoBehaviour
 
     void CreateFX_GC_R()
     {
-        Debug.Log("Right Footstep Event Triggered");
+        // Debug.Log("Right Footstep Event Triggered");
         Transform rightFoot = animator.GetBoneTransform(HumanBodyBones.RightFoot);
         Vector3 footPosition = rightFoot.position;
 
