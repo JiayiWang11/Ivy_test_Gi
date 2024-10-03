@@ -79,11 +79,6 @@ public class FixedObjectInteraction : MonoBehaviour
             tranmitType = TransmitType.None;
         }
     }
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 200, 50), "ladderTransmit:"+(ladderTransmit==null));
-        GUI.Label(new Rect(10, 60, 200, 50), "tranmitType:"+tranmitType);
-    }
     public void ToggleDoor()
     {
         if (Input.GetKeyDown(KeyCode.Q))

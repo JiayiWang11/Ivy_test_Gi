@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,7 @@ public class movement2 : MonoBehaviour
     private RaycastHit hit;
     private void FixedUpdate()
     {
+        isFirstTrigger = true;
         // 获取水平和垂直方向的输入
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -122,7 +124,23 @@ public class movement2 : MonoBehaviour
         toRotation = Quaternion.Euler(0f, toRotation.eulerAngles.y, 0f);
         transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
     }
-    private void OnCollisionStay(Collision collision)
+     private float fireTimer = 0f;
+     private bool isFirstTrigger = false;
+     private void OnTriggerStay(Collider other)
+     {
+         if(!isFirstTrigger) return;
+         if (other.gameObject.name.Contains("fire"))
+         {
+             fireTimer += Time.fixedDeltaTime;
+             isFirstTrigger = false;
+             if (fireTimer > 1f)
+             {
+                 fireTimer-=1f;
+                 GetComponent<PlayerHealth>().TakeDamage(0.1f);
+             }
+         }
+     }
+     private void OnCollisionStay(Collision collision)
     {
         isGrounded = true;
     }
