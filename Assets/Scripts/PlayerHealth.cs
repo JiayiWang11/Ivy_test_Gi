@@ -26,6 +26,19 @@ public class PlayerHealth : MonoBehaviour
         }
         Debug.Log("current health is :" + currentHealth);
     }
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= (int)(maxHealth*damage);
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        healthBar.SetHealth(currentHealth); // 更新血条UI
+
+        if (currentHealth <= 0)
+        {
+            Die(); // 玩家死亡时调用
+        }
+        Debug.Log("current health is :" + currentHealth);
+    }
 
     void Die()
     {
